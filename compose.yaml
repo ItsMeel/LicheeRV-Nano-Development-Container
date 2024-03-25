@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  ssh:
+    build:
+      context: .
+      args:
+        - ADMIN_PASSWORD=AdminPSWD
+    ports:
+      - "22:22"
+    volumes:
+      - usr-data:/home/admin
+
+volumes:
+  usr-data:
